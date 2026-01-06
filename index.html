@@ -1,52 +1,491 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Mon Portfolio</title>
-  <link rel="stylesheet" href="stylel.css">
-</head>
-<body>
-
-  <header>
-    <h1>Mon Portfolio</h1>
-  </header>
-
-  <div class="intro">
-    Bienvenue sur mon portfolio de BTS SIO – découvrez mes projets et missions réalisés durant ma formation.
-  </div>
-
-  <div class="links">
-
-  <DIV>
-    <a href="tp1/index.html">TP1</a> <br>
-    <a href="tp2/index.html">TP2</a> <br>
-    <a href="tp3/index.html">TP3</a> <br>
-    <a href="tp4/index.html">TP4</a><br>
-    <a href="tp5/index.html">TP5</a><br>
-    <a href="tp6/index.html">TP6</a><br>
-    <a href="tp7/tp7.pdf">TP7</a><br>
-    <a href="tp8JS/index.html">TP8</a><br>
-    <a href="tp9_bootstrap/index.html">TP9</a><br>
-     <a href="tp10/index.html">TP10</a><br>
-      <a href="tp11/index.html">TP11</a><br>
-       <a href="tp12 SQL/sommaire.html">TP12 SQL</a><br>
-       <BR>
-        </DIV>
-
-<HR>
 
 
-  <div>
-    <a href="mission1/sommaire.html">Mission 1</a><br>
-     <a href="mission-tp2/certification ANSII.jpg">Mission 2 (Certification ANSSI)</a><br>
-     <a href="mission-tp3/mission-tp3.pdf">Mission 3 (Certification RGPD)</a><br>
-    
-  </div>
+
 
 
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio BTS SIO - Lana</title>
+
+  <!-- Police Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Style global */
+    :root {
+      --bg-light: #fdf7ff;
+      --bg-card: #ffffff;
+      --primary: #e48ccf;
+      --primary-dark: #c96fb3;
+      --accent: #7f8cff;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --border-soft: #f1d7ea;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius-card: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fde7ff, #f7fbff);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Conteneur principal */
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    /* En-tête */
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 20px 24px;
+      margin: 16px 0 24px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 24px;
+      border: 1px solid #f6e5ff;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(6px);
+    }
+
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffe3f6, #f4c2e3 55%, #f5b4ec);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #ffffff;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(221, 120, 188, 0.5);
+    }
+
+    .brand-text h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    .brand-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      background: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-color: transparent;
+      box-shadow: 0 4px 10px rgba(124, 106, 255, 0.35);
+    }
+
+    /* Badge BTS */
+    .bts-badge {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff5fb;
+      border: 1px solid var(--border-soft);
+      color: var(--primary-dark);
+    }
+
+    /* Sections */
+    section {
+      margin: 24px 0;
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-pill {
+      width: 6px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+
+    .section-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 18px 18px 16px;
+      border: 1px solid #f4e3ff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* À propos */
+    #apropos p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .apropos-highlight {
+      margin-top: 8px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #fdf0ff;
+      border: 1px solid #f1c9ec;
+      color: var(--primary-dark);
+    }
+
+    .tag-secondary {
+      background: #eef0ff;
+      border-color: #ced1ff;
+      color: #5b63c9;
+    }
+
+    /* Grilles de cartes */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .item-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+      border: 1px solid #f2e0ff;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 70px;
+    }
+
+    .item-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(193, 110, 194, 0.18);
+      border-color: var(--primary);
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .item-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .item-tag {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: var(--primary-dark);
+      background: #fff5fb;
+      padding: 3px 8px;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+
+    /* Liens simples (dans tes sections actuelles) */
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .link-list a {
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+      position: relative;
+      padding-left: 14px;
+      transition: color 0.18s ease, transform 0.18s ease;
+    }
+
+    .link-list a::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1rem;
+      line-height: 1;
+      top: 2px;
+    }
+
+    .link-list a:hover {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px dashed #e7cbee;
+      margin: 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      header {
+        padding: 16px 16px 18px;
+      }
+
+      .brand-text h1 {
+        font-size: 1.15rem;
+      }
+
+      .page-container {
+        padding: 14px 12px 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-container">
+
+    <!-- En-tête -->
+    <header>
+      <div class="header-top">
+        <div class="brand">
+          <div class="logo-circle">L</div>
+          <div class="brand-text">
+            <h1>Portfolio BTS SIO</h1>
+            <p>Par Lana </p>
+          </div>
+        </div>
+        <span class="bts-badge">BTS SIO • 1ère </span>
+      </div>
+
+      <nav>
+        <a href="#apropos" class="nav-link active">À propos</a>
+        <a href="#projets" class="nav-link">Projets (TP)</a>
+        <a href="#missions" class="nav-link">Missions</a>
+      </nav>
+    </header>
+
+    <!-- Section À propos -->
+    <section id="apropos">
+      <h2>
+        <span class="section-pill"></span>
+        À propos
+      </h2>
+      <div class="section-card">
+        <p>
+          Je suis étudiante en BTS SIO. Voici mes projets et missions.
+        </p>
+  
+
+    <!-- Section Projets (TP) -->
+    <section id="projets">
+      <h2>
+        <span class="section-pill"></span>
+        Projets (TP)
+      </h2>
+      <div class="section-card">
+        <div class="cards-grid">
+          <a href="tp1/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP1</div>
+              <div class="item-subtitle">Bases HTML / CSS</div>
+            </div>
+            <div class="item-tag">Travaux pratiques</div>
+          </a>
+
+          <a href="tp2/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP2</div>
+              <div class="item-subtitle">Mise en page web</div>
+            </div>
+            <div class="item-tag">Front-end</div>
+          </a>
+
+          <a href="tp3/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP3</div>
+              <div class="item-subtitle">Formulaires & interactions</div>
+            </div>
+            <div class="item-tag">Web</div>
+          </a>
+
+          <a href="tp4/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP4</div>
+              <div class="item-subtitle">Mise en pratique</div>
+            </div>
+            <div class="item-tag">BTS SIO</div>
+          </a>
+
+          <a href="tp5/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP5</div>
+              <div class="item-subtitle">Approfondissement</div>
+            </div>
+            <div class="item-tag">Projet</div>
+          </a>
+
+          <a href="tp6/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP6</div>
+              <div class="item-subtitle">Fonctionnalités avancées</div>
+            </div>
+            <div class="item-tag">Technique</div>
+          </a>
+
+          <a href="tp7/tp7.pdf" class="item-card">
+            <div>
+              <div class="item-title">TP7</div>
+              <div class="item-subtitle">Document PDF</div>
+            </div>
+            <div class="item-tag">Support</div>
+          </a>
+
+          <a href="tp8JS/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP8</div>
+              <div class="item-subtitle">JavaScript</div>
+            </div>
+            <div class="item-tag">JS</div>
+          </a>
+
+          <a href="tp9_bootstrap/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP9</div>
+              <div class="item-subtitle">Bootstrap</div>
+            </div>
+            <div class="item-tag">Framework</div>
+          </a>
+
+          <a href="tp10/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP10</div>
+              <div class="item-subtitle">Projet web</div>
+            </div>
+            <div class="item-tag">Web</div>
+          </a>
+
+          <a href="tp11/index.html" class="item-card">
+            <div>
+              <div class="item-title">TP11</div>
+              <div class="item-subtitle">Application</div>
+            </div>
+            <div class="item-tag">Développement</div>
+          </a>
+
+          <a href="tp12 SQL/sommaire.html" class="item-card">
+            <div>
+              <div class="item-title">TP12 SQL</div>
+              <div class="item-subtitle">Bases de données SQL</div>
+            </div>
+            <div class="item-tag">SQL</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Section Missions -->
+    <section id="missions">
+      <h2>
+        <span class="section-pill"></span>
+        Missions
+      </h2>
+      <div class="section-card">
+        <div class="cards-grid">
+          <a href="mission1/sommaire.html" class="item-card">
+            <div>
+              <div class="item-title">Mission 1</div>
+              <div class="item-subtitle">Présentation de la mission et travaux associés</div>
+            </div>
+            <div class="item-tag">Mission encadrée</div>
+          </a>
+
+          <a href="mission-tp2/certification ANSII.jpg" class="item-card">
+            <div>
+              <div class="item-title">Mission 2</div>
+              <div class="item-subtitle">Certification ANSSI</div>
+            </div>
+            <div class="item-tag">Cybersécurité</div>
+          </a>
+
+          <a href="mission-tp3/mission-tp3.pdf" class="item-card">
+            <div>
+              <div class="item-title">Mission 3</div>
+              <div class="item-subtitle">Certification RGPD</div>
+            </div>
+            <div class="item-tag">RGPD</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
 
 
 
+   
+    
